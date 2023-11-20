@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:ital,wght@0,500;1,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Lato&family=Open+Sans:ital,wght@0,500;1,800&display=swap"
+        rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <a class="logo_unity" href="cadastro.html">Unity Eleven</a>
+
+            <ul id="links_header">
+                <li><a class="link_formatado" href="index.html">Home</a></li>
+                <li><a class="link_formatado" href="#rodape">Contato</a></li>
+                <li><a class="link_formatado" href="suporte.html">Suporte</a></li>
+
+            </ul>
+
+            <div id="botao_cadastro_login">
+                <button><a class="botao_formatado" href="cadastro.html">Cadastrar Jogador</a></button>
+                <button><a class="botao_formatado" href="cadastro.html">Cadastrar Equipe</a></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="banner">
+        <div class="container">
+            <div class="formulario">
+
+                <img class="logo_campeonato" src="assets/logo_campeonato.png" alt="" />
+                <!--IMAGEM LOGIN -->
+
+                
+                <h2>ESTÁ NA HORA DE ENTRAR <br>
+                    EM CAMPO!</h2>
+
+
+
+                <span>E-mail:</span>
+                <input id="input_email" />
+
+                <span>Senha:</span>
+                <input id="input_senha" type="password" placeholder="********" />
+
+                <span style="padding-bottom: 10px" id="span_confirmacao"></span>
+
+                <button id="botao_login" onclick="entrar()"><a class="botao_formatado_verde" href="">Entrar</a></button>
+            </div>
+        </div>
+    </div>
+    
+
+    <!--FOOTER-->
+
+    <footer>
+        <div class="container">
+            <!--UL 1-->
+            <ul>
+                <h3>Unity Eleven</h3>
+                <p>Championship, onde a diversão e a comunidade se encontram crie frases parecidas.</p>
+                <div class="rede_sociais">
+
+                    <img src="assets/logo-linkedin.png" alt="linkedin">
+                    <img src="assets/logo-instagram.webp" alt="instagram">
+                    <img src="assets/logo-whatsapp.png" alt="logo-whatsapp">
+
+                </div>
+            </ul>
+            <!-- END UL 1-->
+
+            <!--UL 2-->
+            <ul>
+                <h3>Link</h3>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Preços</a></li>
+                <li><a href="#">Baixar</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+            </ul> <!--END UL 2-->
+
+
+            <!-- UL 3 -->
+            <ul>
+                <h3>Suporte</h3>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Como Funciona</a></li>
+                <li><a href="#">Características</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Comunicando</a></li>
+            </ul> <!--END UL 3-->
+
+            <!--UL 4-->
+            <ul>
+                <h3>Nos Contacte</h3>
+                <li>
+                    <p>+55 11 93410 1869</p>
+                </li>
+                <li>
+                    <p>unity.eleven@sptech.school</p>
+                </li>
+                <li>
+                    <p>Brasil</p>
+                </li>
+            </ul> <!--END UL 4-->
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+       
+
+       var emailVar = input_email.value
+       var senhaVar = input_senha.value
+
+       console.log("FORM LOGIN: ", emailVar);
+       console.log("FORM SENHA: ", senhaVar);
+
+       // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+       if (emailVar == "" || senhaVar == "") {
+           window.alert("Preencha todos os campos para prosseguir!");
+          5
+           return false;
+       }
+
+       if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+           window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+        
+           return false;
+       }
+
+       fetch("/usuarios/entrar", {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify({
+               emailServer: emailVar,
+               senhaServer: senhaVar
+           })
+       }).then(function (resposta) {
+           console.log("ESTOU NO THEN DO entrar()!")
+
+           if (resposta.ok) {
+               console.log(resposta);
+
+               resposta.json().then(json => {
+                   console.log(json);
+                   console.log(JSON.stringify(json));
+
+                   sessionStorage.EMAIL_USUARIO = json.email;
+                   sessionStorage.NOME_USUARIO = json.nome;
+                   sessionStorage.ID_USUARIO = json.id;
+
+                   setTimeout(function () {
+                       window.location = "home.html";
+                   }, 1000); // apenas para exibir o loading
+
+               });
+
+           } else {
+
+               console.log("Houve um erro ao tentar realizar o login!");
+
+               resposta.text().then(texto => {
+                   console.error(texto);
+               
+               });
+           }
+
+       }).catch(function (erro) {
+           console.log(erro);  
+       })
+
+       return false;
+    }
+</script>

@@ -1,0 +1,79 @@
+body {
+    background-image: url(fundo_jogador_noticias.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#foto_perfil img {
+    border-radius: 100px;
+    height: 50px;
+    width: 50px;
+}
+
+#links_header {
+    font-family: 'Lato', sans-serif;
+    width: 300px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    
+}
+
+
+#links_header li {
+    margin-left: -1100px;
+}
+
+
+
+/* INICIO BANNER */
+
+.banner h1 {
+    color: white;
+    text-align: center; }
+
+
+.texto_principal img {
+    margin-left: 250px;
+    
+}
+
+.texto_principal span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.texto_principal {
+    color: white;
+    padding: 15px;
+    margin: auto;
+    width: 60%;
+}
+
+/* carrossel */
+
+#carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item img {
+    width: 60%;
+   margin-left: 100px;
+}
+
+#crossplay {
+    width: 60%;
+    margin-left: 100px;
+}
+
+.texto_principal button {
+    padding: 10px;
+    background-color: #4BC65B;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
