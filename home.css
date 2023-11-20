@@ -45,7 +45,8 @@ body {
 }
 
 .banner .boxes .boxbranco:hover {
-    background: linear-gradient(to right, rgb(255, 255, 255), black );
+    background: linear-gradient(to right, rgb(255, 255, 255), black);
+    padding: 0 10px;
  }
 
 .banner .boxes .box {
@@ -57,6 +58,7 @@ body {
 
 .banner .boxes .box:hover {
     background:  linear-gradient(to right, blue, black );
+    padding: 0 10px;
  }
 
 
