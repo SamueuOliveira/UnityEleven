@@ -139,3 +139,30 @@ box-shadow:  5px 5px 0px #2c2b2b,
 }
 
 
+ /* sobre mim */ 
+
+
+
+#texto_sobre_mim {
+    width: 52%;
+    font-family:'Open Sans', sans-serif;
+    font-size: 22px;
+}
+
+#sobreMim {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 100px 0 210px;
+}
+
+
+#img_sobre_mim img {
+    border-radius: 100px;
+    height: 500px;
+    margin-top: 40px;
+    
+     
+}
+
+
+
