@@ -9,18 +9,18 @@ function listar(req, res) {
     })
 }
 
-function cadastrar(req, res) {
+function cadastrarEquipe(req, res) {
     
 
-    var nomeProprietario = req.body.nomeProprietarioServer;
-    var nomeClube = req.body.nomeClubeServer;
+    var nomeProprietario = req.body.proprietarioServer;
+    var nomeClube = req.body.clubeServer;
     var fundacao = req.body.fundacaoServer;
-    var plataforma = req.body.plataformaServer;
-    var estado = req.body.estadoServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
-    var telefone = req.body.telefoneServer;
-
+    var plataforma = req.body.plataformaEquipeServer;
+    var estado = req.body.estadoEquipeServer;
+    var email = req.body.emailEquipeServer;
+    var senha = req.body.senhaEquipeServer;
+    var telefone = req.body.telefoneEquipeServer;
+    console.log("email: ", email, "senha: ",)
      // Faça as validações dos valores
      if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
@@ -30,7 +30,7 @@ function cadastrar(req, res) {
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        clubeModel.cadastrar(nomeProprietario, nomeClube, fundacao, plataforma, estado, email, senha, telefone)
+        clubeModel.cadastrarEquipe(nomeProprietario, nomeClube, fundacao, plataforma, estado, email, senha, telefone)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -50,6 +50,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     listar,
-    cadastrar
+    cadastrarEquipe
 }
 

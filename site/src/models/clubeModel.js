@@ -8,7 +8,7 @@ function listar() {
     return database.executar(instrucao);
 }
 
-function cadastrar(nomeProprietario, nomeClube, fundacao, plataforma, estado, email, senha, telefone) {
+function cadastrarEquipe(nomeProprietario, nomeClube, fundacao, plataforma, estado, email, senha, telefone) {
     var instrucao = `
         INSERT INTO clube (nomeProprietario, nomeClube, fundacao, plataforma, estado, email, senha, telefone) VALUES ('${nomeProprietario}', '${nomeClube}', '${fundacao}', '${plataforma}', '${estado}', '${email}', '${senha}', '${telefone}');
     `;
@@ -17,6 +17,6 @@ function cadastrar(nomeProprietario, nomeClube, fundacao, plataforma, estado, em
 }
 
 module.exports = {
-    cadastrar,
+    cadastrarEquipe,
     listar
 };

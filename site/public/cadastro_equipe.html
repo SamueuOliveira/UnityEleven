@@ -121,7 +121,7 @@
 
                 <span style="padding-bottom: 10px" id="span_confirmacao"></span>
 
-                <button id="botao_cadastro" onclick="cadastrar()">Cadastrar</button>
+                <button id="botao_cadastro" onclick="cadastrarEquipe()">Cadastrar</button>
             </div>
         </div>
     </div>
@@ -189,7 +189,7 @@
 
 <script>
 
-    function cadastrar() {
+    function cadastrarEquipe() {
     
             var ProprietarioVar = input_proprietario.value;
             var clubeVar = input_clube.value;
@@ -203,7 +203,7 @@
             
     
     
-            fetch("/clube/cadastrar", {
+            fetch("/clube/cadastrarEquipe", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -216,9 +216,7 @@
                     estadoEquipeServer: estadoEquipeVar,
                     emailEquipeServer: emailEquipeVar,
                     senhaEquipeServer: senhaEquipeVar,
-                    telefoneEquipeServer: telefoneEquipeVar,
-                  
-    
+                    telefoneEquipeServer: telefoneEquipeVar
                 })
             }).then(function (resposta) {
     
@@ -231,7 +229,7 @@
     
     
                 } else {
-                    alert(`Erro ao cadastrar`)
+                    alert(`Erro ao cadastrarEquipe`)
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
