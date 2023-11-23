@@ -121,7 +121,7 @@
 
                 <span style="padding-bottom: 10px" id="span_confirmacao"></span>
 
-                <button id="botao_cadastro" onclick="cadastrar()"><a class="botao_formatado_verde" href="home.html">Cadastrar</a></button>
+                <button id="botao_cadastro" onclick="cadastrar()">Cadastrar</button>
             </div>
         </div>
     </div>
@@ -196,7 +196,6 @@
             var fundacaoVar = input_fundacao.value;
             var plataformaEquipeVar = select_plataforma_equipe.value;
             var estadoEquipeVar = select_estado_equipe.value;
-            var estadoVar = select_estado_equipe.value;
             var emailEquipeVar = input_email_equipe.value;
             var senhaEquipeVar = input_senha_equipe.value;
             var senhaConfirmarEquipeVar = input_confirmar_senha_equipe.value;
@@ -204,7 +203,7 @@
             
     
     
-            fetch("/usuarios/cadastrar", {
+            fetch("/clube/cadastrar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -213,10 +212,8 @@
                     proprietarioServer: ProprietarioVar,
                     clubeServer: clubeVar,
                     fundacaoServer: fundacaoVar,
-                    overallServer: overallVar,
                     plataformaEquipeServer: plataformaEquipeVar,
                     estadoEquipeServer: estadoEquipeVar,
-                    estadoServer: estadoVar,
                     emailEquipeServer: emailEquipeVar,
                     senhaEquipeServer: senhaEquipeVar,
                     telefoneEquipeServer: telefoneEquipeVar,

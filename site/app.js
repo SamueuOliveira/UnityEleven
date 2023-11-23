@@ -35,3 +35,22 @@ app.listen(PORTA, function () {
     \t\tSe "producao", você está se conectando ao banco REMOTO (SQL Server em nuvem Azure) \n
     \t\t\t\tPara alterar o ambiente, comente ou descomente as linhas 1 ou 2 no arquivo 'app.js'`);
 });
+
+/* CADASTRO DA EQUIPE */
+var clubeRouter = require("./src/routes/clube");
+
+var app = express();
+
+var indexRouter = require("./src/routes/index");
+var usuarioRouter = require("./src/routes/usuarios");
+var avisosRouter = require("./src/routes/avisos");
+var medidasRouter = require("./src/routes/medidas");
+var clubeRouter = require("./src/routes/clube");
+
+app.use(cors());
+
+app.use("/", indexRouter);
+app.use("/usuarios", usuarioRouter);
+app.use("/avisos", avisosRouter);
+app.use("/medidas", medidasRouter);
+app.use("/clube", clubeRouter);

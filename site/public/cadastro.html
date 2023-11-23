@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cadastro.css">
@@ -55,7 +55,7 @@
                 <h2>Cadastre-se</h2>
 
                 <span>Gamertag:</span>
-                <input id="input_gamertag"/>
+                <input id="input_gamertag" />
 
                 <span>Plataforma:</span>
                 <select name="" id="select_plataforma">
@@ -69,59 +69,59 @@
                 </select>
 
                 <span>Posição:</span>
-            <select name="" id="select_posicao"> 
-                <option value="">Escolha uma Posição</option> 
-                <option value="GOL">GOL</option>
-                <option value="ZAG">ZAG</option>
-                <option value="LD">LD</option>
-                <option value="LE">LE</option>
-                <option value="VOL">VOL</option>
-                <option value="MC">MC</option>
-                <option value="MD">MD</option>
-                <option value="ME">ME</option>
-                <option value="MEI">MEI</option>
-                <option value="PE">PE</option>
-                <option value="PD">PD</option>
-                <option value="SA">SA</option>
-                <option value="ATA">ATA</option>
-            </select>
+                <select name="" id="select_posicao">
+                    <option value="">Escolha uma Posição</option>
+                    <option value="GOL">GOL</option>
+                    <option value="ZAG">ZAG</option>
+                    <option value="LD">LD</option>
+                    <option value="LE">LE</option>
+                    <option value="VOL">VOL</option>
+                    <option value="MC">MC</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MEI">MEI</option>
+                    <option value="PE">PE</option>
+                    <option value="PD">PD</option>
+                    <option value="SA">SA</option>
+                    <option value="ATA">ATA</option>
+                </select>
 
-            <span>Overall:</span>
-            <input id="input_overall" type="number"/>
+                <span>Overall:</span>
+                <input id="input_overall" type="number" />
 
-            <span>Link do seu Vídeo:</span>
-            <input style="text-align: center;" id="input_link" placeholder="www.youtube.com/seu-video">
+                <span>Link do seu Vídeo:</span>
+                <input style="text-align: center;" id="input_link" placeholder="www.youtube.com/seu-video">
 
-            <span>Escolha um estado:</span>
-    <select id="select_estado" name="estados">
-        <option value="SP">São Paulo</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AP">Amapá</option>
-        <option value="AM">Amazonas</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PR">Paraná</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="RO">Rondônia</option>
-        <option value="RR">Roraima</option>
-        <option value="SC">Santa Catarina</option>
-        <option value="SE">Sergipe</option>
-        <option value="TO">Tocantins</option>
-    </select>
+                <span>Escolha um estado:</span>
+                <select id="select_estado" name="estados">
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
 
                 <span>E-mail:</span>
                 <input id="input_email" />
@@ -133,11 +133,16 @@
                 <input id="input_confirmar_senha" type="password" placeholder="********" />
 
                 <span>Telefone:</span>
-                <input id="input_telefone"/>
+                <input id="input_telefone" />
 
                 <span style="padding-bottom: 10px" id="span_confirmacao"></span>
 
-                <button id="botao_cadastro" onclick="verificarCadastro()"><a class="botao_formatado_verde" href="">Cadastrar</a></button>
+                <button id="botao_cadastro" onclick="cadastrar()">
+                    Cadastrar
+                </button>
+
+                <div id="exibir_erro"></div>
+
             </div>
         </div>
     </div>
@@ -199,13 +204,14 @@
 
 
 
+
 </body>
 
 </html>
 
 <script>
 
-function verificarCadastro() {
+    function cadastrar() {
 
         var gamertagVar = input_gamertag.value;
         var plataformaVar = select_plataforma.value;
@@ -217,48 +223,84 @@ function verificarCadastro() {
         var senhaVar = input_senha.value;
         var senhaConfirmarVar = input_confirmar_senha.value;
         var telefoneVar = input_telefone.value;
-        
+
+        // VALIDAÇÕES DO CADASTRO DO JOGADOR
+
+        if (
+            gamertagVar.trim() === "" ||
+            overallVar.trim() === "" ||
+            linkVideoVar.trim() === "" ||
+            emailVar.trim() === "" ||
+            senhaVar.trim() === "" ||
+            senhaConfirmarVar.trim() === "" ||
+            telefoneVar.trim() === ""
+        ) {
+            exibir_erro.innerHTML = `<p style="color: red; font-weight: bold;">Preencha todos os campos!</p>`;
+
+        }
+
+        else if (plataformaVar.trim() === '') {
+            exibir_erro.innerHTML = `<p style="color: red; font-weight: bold;">Escolha a sua Plataforma!</p>`;
 
 
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                gamertagServer: gamertagVar,
-                plataformaServer: plataformaVar,
-                posicaoServer: posicaoVar,
-                overallServer: overallVar,
-                linkVideoServer:linkVideoVar,
-                estadoServer: estadoVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-                telefoneServer: telefoneVar,
-              
+        }
 
-            })
-        }).then(function (resposta) {
+        else if (posicaoVar.trim() === '') {
+            exibir_erro.innerHTML = `<p style="color: red; font-weight: bold;">Escolha a sua Posição!</p>`;
+        }
 
-            console.log("resposta: ", resposta);
+        else if (senhaVar.length < 8 || senhaConfirmarVar.length < 8) {
+            exibir_erro.innerHTML = `<p style="color: red; font-weight: bold;">Senha tem que conter no mínimo 8</p>`;
+        }
 
-            if (resposta.ok) {
-                alert(`Cadastrado com Sucesso`)
+        else if (senhaVar != senhaConfirmarVar) {
+            exibir_erro.innerHTML = `<p style="color: red; font-weight: bold;">Senhas Diferentes!</p>`;
+        }
 
-                window.location = "login.html";
+        else {
 
 
-            } else {
-                alert(`Erro ao cadastrar`)
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    gamertagServer: gamertagVar,
+                    plataformaServer: plataformaVar,
+                    posicaoServer: posicaoVar,
+                    overallServer: overallVar,
+                    linkVideoServer: linkVideoVar,
+                    estadoServer: estadoVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                    telefoneServer: telefoneVar,
 
-        });
 
-        return false;
-    }
+                })
+            }).then(function (resposta) {
 
-    
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    exibir_erro.innerHTML = `<img style="width: 30px;" src="assets/gif_carregamento.gif" alt="">`
+                    setTimeout(function () {
+                        window.location = "login.html";
+                    }, 3000);  // O valor 2000 representa um atraso de 2 segundos (em milissegundos)
+                }
+
+                else {
+                    alert(`Erro ao cadastrar`)
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
+
+            return false;
+        }
+
+    }
 </script>

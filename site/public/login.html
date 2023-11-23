@@ -69,7 +69,11 @@
 
                 <span style="padding-bottom: 10px" id="span_confirmacao"></span>
 
-                <button id="botao_login" onclick="entrar()"><a class="botao_formatado_verde" href="">Entrar</a></button>
+                <button id="botao_login" onclick="entrar()">
+                    <!-- <a class="botao_formatado_verde" href=""> -->
+                        Entrar
+                    <!-- </a> -->
+                </button>
             </div>
         </div>
     </div>
@@ -160,7 +164,7 @@
            return false;
        }
 
-       fetch("/usuarios/entrar", {
+       fetch("/usuarios/autenticar", {
            method: "POST",
            headers: {
                "Content-Type": "application/json"
@@ -177,15 +181,14 @@
 
                resposta.json().then(json => {
                    console.log(json);
-                   console.log(JSON.stringify(json));
 
                    sessionStorage.EMAIL_USUARIO = json.email;
                    sessionStorage.NOME_USUARIO = json.nome;
                    sessionStorage.ID_USUARIO = json.id;
 
-                   setTimeout(function () {
-                       window.location = "home.html";
-                   }, 1000); // apenas para exibir o loading
+                //    setTimeout(function () {
+                //        window.location = "home.html";
+                //    }, 1000); // apenas para exibir o loading
 
                });
 
