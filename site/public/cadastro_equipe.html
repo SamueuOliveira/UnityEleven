@@ -122,6 +122,7 @@
                 <span style="padding-bottom: 10px" id="span_confirmacao"></span>
 
                 <button id="botao_cadastro" onclick="cadastrarEquipe()">Cadastrar</button>
+                <div id="exibir_erro"></div>
             </div>
         </div>
     </div>
@@ -201,7 +202,23 @@
             var senhaConfirmarEquipeVar = input_confirmar_senha_equipe.value;
             var telefoneEquipeVar = input_telefone_equipe.value;
             
-    
+            
+            // VALIDAÇÕES DO CADASTRO EQUIPE
+        
+            if (
+            ProprietarioVar.trim() === "" ||
+            clubeVar.trim() === "" ||
+            fundacaoVar.trim() === "" ||
+            plataformaEquipeVar.trim() === "" ||
+            estadoEquipeVar.trim() === "" ||
+            emailEquipeVar.trim() === "" ||
+            senhaConfirmarEquipeVar.trim() === "" ||
+            telefoneEquipeVar.trim() === ""
+        ) {
+            exibir_erro.innerHTML = `<p style="color: red; font-weight: bold;">Preencha todos os campos!</p>`;
+
+        }
+
     
             fetch("/clube/cadastrarEquipe", {
                 method: "POST",
