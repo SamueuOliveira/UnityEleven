@@ -11,5 +11,25 @@ router.post("/cadastrar", function (req, res) {
 router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
+router.get("/plataformaPC", function (req, res) {
+    usuarioController.plataformaPC(req, res);
+})
+
+router.get("/plataformaPS4", function (req, res) {
+    usuarioController.plataformaPS4(req, res);
+});
+
+router.get("/plataformaPS5", function (req, res) {
+    usuarioController.plataformaPS5(req, res);
+});
+
+router.get("/plataformaXBOXONE", function (req, res) {
+    usuarioController.plataformaXBOXONE(req, res);
+});
+
+router.get("/plataformaXBOXSERIES", function (req, res) {
+    usuarioController.plataformaXBOXSERIES(req, res);
+});
+
 
 module.exports = router;

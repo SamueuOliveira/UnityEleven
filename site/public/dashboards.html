@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/dashboards.css">
+</head>
+
+<body onload="plataformaPC() , plataformaPS4(), plataformaPS5(), plataformaXBOXONE(), plataformaXBOXSERIES()">
+
+    <!-- INICIO CABEÇALHO -->
+
+    <div class="header">
+        <div class="container">
+            <a class="logo_unity" href="index.html">Unity Eleven</a>
+
+            <div>
+                <ul id="links_header">
+
+
+
+
+                    <li><a class="link_formatado" href="home.html">Home</a></li>
+                    <li><a class="link_formatado" href="noticias.html">Noticias</a></li>
+                    <li><a class="link_formatado" href="suporte.html">Suporte</a></li>
+
+                </ul>
+            </div>
+
+            <div id="botao_cadastro_login">
+                <button><a class="botao_formatado" href="login.html">Login</a></button>
+                <button><a class="botao_formatado" href="cadastro.html">Cadastrar Jogador</a></button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- INICIO CABEÇALHO -->
+
+    <div class="banner"> <!--flex direction column-->
+        <div class="dashboards"> <!--flex direction row-->
+
+            <div class="grafico_estado">
+                <canvas id="myChart"
+                    style="display: flex; position: relative; width: 60vh; height: 20vw; margin-left: 50px;"></canvas>
+            </div>
+            
+
+            <div class="grafico_plataforma">
+                <canvas id="myChart2"
+                    style="position: relative; width: 60vh; height: 26vw; margin-left: 250px;"></canvas>
+            </div>
+        </div>
+
+    </div>
+    <button onclick="MostrarDash()" style="color: black;">Mostre</button>
+
+
+    <!--FOOTER-->
+
+    <div id="rodape">
+        <footer>
+            <div class="container">
+                <!--UL 1-->
+                <ul>
+                    <h3>Unity Eleven</h3>
+                    <p>Championship, onde a diversão e a comunidade se encontram crie frases parecidas.</p>
+                    <div class="rede_sociais">
+
+                        <img src="public/assets/logo-linkedin.png" alt="linkedin">
+                        <img src="public/assets/logo-instagram.webp" alt="instagram">
+                        <img src="public/assets/logo-whatsapp.png" alt="logo-whatsapp">
+                    </div>
+                </ul>
+                <!-- END UL 1-->
+                <!--UL 2-->
+                <ul>
+                    <h3>Link</h3>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Preços</a></li>
+                    <li><a href="#">Baixar</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Serviços</a></li>
+                </ul> <!--END UL 2-->
+                <!-- UL 3 -->
+                <ul>
+                    <h3>Suporte</h3>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">Características</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Comunicando</a></li>
+                </ul> <!--END UL 3-->
+                <!--UL 4-->
+                <ul>
+                    <h3>Nos Contacte</h3>
+                    <li>
+                        <p>+55 11 93410 1869</p>
+                    </li>
+                    <li>
+                        <p>unity.eleven@sptech.school</p>
+                    </li>
+                    <li>
+                        <p>Brasil</p>
+                    </li>
+                </ul> <!--END UL 4-->
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"> </script>
+<script>
+
+
+
+    function plataformaPC() {
+        fetch("/usuarios/plataformaPC").then(function (resposta) {
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaPC = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaPC.plataformaPCbd);
+                    sessionStorage.PLATAFORMAPC = resposta[0].plataformaPC
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+    function plataformaPS4() {
+        fetch("/usuarios/plataformaPS4").then(function (resposta) {
+            console.log("ESTOU NO THEN DO plataformaPS4()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaPS4 = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaPS4.plataformaPS4bd);
+                    sessionStorage.PLATAFORMAPS4 = resposta[0].plataformaPS4
+                    console.log(resposta)
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+    function plataformaPS5() {
+        fetch("/usuarios/plataformaPS5").then(function (resposta) {
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaPS5 = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaPS5.plataformaPS5bd);
+                    sessionStorage.PLATAFORMAPS5 = resposta[0].plataformaPS5
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+
+    function plataformaXBOXONE() {
+        fetch("/usuarios/plataformaXBOXONE").then(function (resposta) {
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaXBOXONE = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaXBOXONE.plataformaXBOXONEbd);
+                    sessionStorage.PLATAFORMAXBOXONE = resposta[0].plataformaXBOXONE
+
+                    console.log("xone", resposta[0].plataformaXBOXONE)
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+
+    function plataformaXBOXSERIES() {
+        fetch("/usuarios/plataformaXBOXSERIES").then(function (resposta) {
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaXBOXSERIES = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaXBOXSERIES.plataformaXBOXSERIES);
+                    sessionStorage.PLATAFORMAXBOXSERIES = resposta[0].plataformaXBOXSERIES
+
+                    console.log("resposta do banco: ",resposta);
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+
+
+
+function MostrarDash() {
+    setTimeout(() =>{
+            var ctx = document.getElementById('myChart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Usúarios que são skatistas' , 'Uśuario que não são skatistas'],
+                                datasets: [{
+                                    label: 'nome',
+                                    data: [Number(sessionStorage.getItem("PLATAFORMAPC")), Number(sessionStorage.getItem("PLATAFORMAPS4")),Number(sessionStorage.getItem("PLATAFORMAPS5")),Number(sessionStorage.getItem("PLATAFORMAXBOXONE")),Number(sessionStorage.getItem("PLATAFORMAXBOXSERIES"))],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132)',
+                                        'rgba(54, 162, 235)',
+                                        'rgba(255, 206, 86)',
+                                        'rgba(75, 192, 192)',
+                                        'rgba(153, 102, 255)',
+                                        'rgba(255, 159, 64)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132)',
+                                        'rgba(54, 162, 235)',
+                                        'rgba(255, 206, 86)',
+                                        'rgba(75, 192, 192)',
+                                        'rgba(153, 102, 255)',
+                                        'rgba(255, 159, 64)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                },
+                                maintainAspectRatio: false
+                            }
+                        });
+    
+                    },200);
+                    
+                    
+                    console.log("deus abençoe: ", sessionStorage);
+}
+
+  
+    
+
+
+
+
+
+
+
+</script>
