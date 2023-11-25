@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -56,7 +57,6 @@
         </div>
 
     </div>
-   
 
 
     <!--FOOTER-->
@@ -148,7 +148,7 @@
 
     function plataformaPS4() {
         fetch("/usuarios/plataformaPS4").then(function (resposta) {
-            method:'GET'
+            method: 'GET'
             console.log("ESTOU NO THEN DO plataformaPS4()!")
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
@@ -173,7 +173,7 @@
 
     function plataformaPS5() {
         fetch("/usuarios/plataformaPS5").then(function (resposta) {
-            method:'GET'
+            method: 'GET'
             console.log("ESTOU NO THEN DO funcskatista()!")
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
@@ -198,7 +198,7 @@
 
     function plataformaXBOXONE() {
         fetch("/usuarios/plataformaXBOXONE").then(function (resposta) {
-            method:'GET'
+            method: 'GET'
             console.log("ESTOU NO THEN DO funcskatista()!")
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
@@ -225,7 +225,7 @@
 
     function plataformaXBOXSERIES() {
         fetch("/usuarios/plataformaXBOXSERIES").then(function (resposta) {
-            method:'GET'
+            method: 'GET'
             console.log("ESTOU NO THEN DO funcskatista()!")
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
@@ -253,10 +253,10 @@
 
 
     function MostrarDash() {
-        
 
-            setTimeout(() => {
-                
+
+        setTimeout(() => {
+
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'pie',
