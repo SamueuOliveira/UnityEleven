@@ -33,6 +33,8 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 30px;
     font-weight: bold;
+    transform: scale(1.1);
+
 }
 
 #links_header {
@@ -52,9 +54,14 @@
     color: white;
 }
 
+.container #links_header .link_formatado:hover {
+color: #4BC65B; 
+}
+
 ul li:hover {
     text-decoration: underline;
     color: #4BC65B;
+    transform: scale(1.1);
 }
 
 

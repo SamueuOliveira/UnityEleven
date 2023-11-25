@@ -4,6 +4,10 @@ body {
     background-size: contain;
 }
 
+#links_header {
+    margin-right: -120px;
+}
+
 #foto_perfil img {
     border-radius: 100px;
     height: 50px;
@@ -12,8 +16,12 @@ body {
 
 #links_header {
     width: 300px;
-    margin-left: -130px;
+    margin-right: -80px;
   }
+
+.header button {
+    margin-right: -130px;
+}
 
 
 /* INICIO BANNER */
@@ -28,17 +36,18 @@ body {
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
-    height: 400px;
+    height: 300px;
     
 }
 
 .dashboards .grafico_estado {
-width: 45%;
-background-color: yellowgreen;
+width: 35%;
+background-color: #fff;
+border: 2px solid black;
 
 }
 
 .dashboards .grafico_plataforma {
-width: 45%;
+width: 35%;
 background-color: red;
 }

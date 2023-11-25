@@ -37,7 +37,7 @@ function plataformaPC() {
 function plataformaPS4() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function street():",);
     var instrucao2 = `
-    select count(plataforma) as plataformaPS4 from jogador where plataforma ='Playstation4';
+    select count(plataforma) as plataformaPS4 from jogador where plataforma ='Playstation 4';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao2);
     return database.executar(instrucao2);
@@ -48,7 +48,7 @@ function plataformaPS4() {
 function plataformaPS5() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function street():");
     var instrucao2 = `
-    select count(plataforma) as plataformaPS5 from jogador where plataforma ='Playstation5';`;
+    select count(plataforma) as plataformaPS5 from jogador where plataforma ='Playstation 5';`;
     console.log("Executando a instrução SQL: \n" + instrucao2);
     return database.executar(instrucao2);
 }
