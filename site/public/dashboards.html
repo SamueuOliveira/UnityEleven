@@ -15,7 +15,11 @@
     <link rel="stylesheet" href="css/dashboards.css">
 </head>
 
-<body onload="MostrarDash()">
+<body onload="plataformaPC() , plataformaPS4(), plataformaPS5(), plataformaXBOXONE(), plataformaXBOXSERIES(), plataformaPCEQUIPE(),  plataformaXBOXONEEQUIPE(), plataformaXBOXSERIESEQUIPE(), plataformaPS4EQUIPE(), plataformaPS5EQUIPE()">
+       
+        
+        
+        
 
     <!-- INICIO CABEÇALHO -->
 
@@ -48,21 +52,31 @@
 
     <div class="banner"> <!--flex direction column-->
         <h1>Bem-vindo à nossa dashboard! Aqui, você pode monitorar a quantidade de usuários cadastrados de acordo com a plataforma. Fique à vontade para explorar e obter insights valiosos sobre nossa comunidade.</h1>
-        <div class="dashboards"> <!--flex direction row-->
+       
 
-            <div class="graficos">
-                <h2>Jogadores Cadastrados</h2> 
-                <canvas id="myChart"></canvas>
+            <div class = "graficos_flex">
+                <div class="graficos">
+                    <h2>Jogadores Cadastrados</h2>
+                    <canvas id="myChart"></canvas>
+                    <button class="botao1" onclick="MostrarDash()">Gráfico Jogadores</button>
+                </div>
+                
+                <div class="graficos">
+                    <h2>Equipes Cadastradas</h2>
+                    <canvas id="myChart2"></canvas>
+                    <button class="botao2" onclick="MostrarDash2()">Gráfico Equipes</button>
+                </div>
             </div>
-
-
-            <div class="graficos">
-                <h2>Equipes Cadastradas</h2>
-                <canvas id="myChart2"></canvas>
+           
+            <div class="botoes">
+                
+                
             </div>
-        </div>
 
     </div>
+
+    
+    
 
 
     <!--FOOTER-->
@@ -254,6 +268,132 @@
         return false;
     }
 
+    // equipe
+
+    function plataformaPCEQUIPE() {
+        fetch("/clube/plataformaPCEQUIPE").then(function (resposta) {
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaPCEQUIPE = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaPC.plataformaPCbd);
+                    sessionStorage.PLATAFORMAPCEQUIPE = resposta[0].plataformaPCEQUIPE
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+    function plataformaPS4EQUIPE() {
+        fetch("/clube/plataformaPS4EQUIPE").then(function (resposta) {
+            method: 'GET'
+            console.log("ESTOU NO THEN DO plataformaPS4()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaPS4EQUIPE = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaPS4.plataformaPS4bd);
+                    sessionStorage.PLATAFORMAPS4EQUIPE = resposta[0].plataformaPS4EQUIPE
+                    console.log(resposta)
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+    function plataformaPS5EQUIPE() {
+        fetch("/clube/plataformaPS5EQUIPE").then(function (resposta) {
+            method: 'GET'
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaPS5EQUIPE = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaPS5.plataformaPS5bd);
+                    sessionStorage.PLATAFORMAPS5EQUIPE = resposta[0].plataformaPS5EQUIPE
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+
+    function plataformaXBOXONEEQUIPE() {
+        fetch("/clube/plataformaXBOXONEEQUIPE").then(function (resposta) {
+            method: 'GET'
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaXBOXONEEQUIPE = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaXBOXONE.plataformaXBOXONEbd);
+                    sessionStorage.PLATAFORMAXBOXONEEQUIPE = resposta[0].plataformaXBOXONEEQUIPE
+
+                    console.log("xone", resposta[0].plataformaXBOXONE)
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+
+
+
+    function plataformaXBOXSERIESEQUIPE() {
+        fetch("/clube/plataformaXBOXSERIESEQUIPE").then(function (resposta) {
+            method: 'GET'
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                    plataformaXBOXSERIESEQUIPE = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                    console.log(plataformaXBOXSERIES.plataformaXBOXSERIES);
+                    sessionStorage.PLATAFORMAXBOXSERIESEQUIPE = resposta[0].plataformaXBOXSERIESEQUIPE
+
+                    console.log("resposta do banco: ", resposta);
+
+
+                });
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
 
 
 
@@ -293,8 +433,49 @@
     });
 }, 200);
 
-        console.log("deus abençoe: ", sessionStorage);
     }
+
+    // equipe
+
+    function MostrarDash2() {
+
+        
+
+setTimeout(() => {
+var ctx = document.getElementById('myChart2').getContext('2d');
+var myChart2 = new Chart(ctx, {
+type: 'bar',
+data: {
+    labels: ['PC', 'Playstation 4', 'Playstation 5', 'Xbox One', 'Xbox Series'],
+    datasets: [{
+        label: 'Plataformas',
+        data: [Number(sessionStorage.getItem("PLATAFORMAPCEQUIPE")), Number(sessionStorage.getItem("PLATAFORMAPS4EQUIPE")), Number(sessionStorage.getItem("PLATAFORMAPS5EQUIPE")), Number(sessionStorage.getItem("PLATAFORMAXBOXONEEQUIPE")), Number(sessionStorage.getItem("PLATAFORMAXBOXSERIESEQUIPE"))],
+        backgroundColor: [
+            'rgba(255, 99, 132)',  // Rosa
+            'rgba(54, 162, 235)',  // Azul
+            'rgba(255, 205, 86)',  // Amarelo
+            'rgba(75, 192, 192)',  // Turquesa
+            'rgba(153, 102, 255)'   // Roxo
+        ],
+        borderColor: [
+            'rgba(255, 99, 132)',
+            'rgba(54, 162, 235)',
+            'rgba(255, 205, 86)',
+            'rgba(75, 192, 192)',
+            'rgba(153, 102, 255)'
+        ],
+        borderWidth: 1
+    }]
+},
+options: {
+    maintainAspectRatio: false
+}
+});
+}, 200);
+
+}
+
+    
 
 
 

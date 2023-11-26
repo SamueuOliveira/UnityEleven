@@ -13,4 +13,25 @@ router.get("/listar", function (req, res) {
     clubeController.listar(req, res);
 });
 
+router.get("/plataformaPCEQUIPE", function (req, res) {
+    clubeController.plataformaPCEQUIPE(req, res);
+})
+
+router.get("/plataformaPS4EQUIPE", function (req, res) {
+    clubeController.plataformaPS4EQUIPE(req, res);
+});
+
+router.get("/plataformaPS5EQUIPE", function (req, res) {
+    clubeController.plataformaPS5EQUIPE(req, res);
+});
+
+router.get("/plataformaXBOXONEEQUIPE", function (req, res) {
+    clubeController.plataformaXBOXONEEQUIPE(req, res);
+});
+
+router.get("/plataformaXBOXSERIESEQUIPE", function (req, res) {
+    clubeController.plataformaXBOXSERIESEQUIPE(req, res);
+});
+
+
 module.exports = router;
