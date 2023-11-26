@@ -76,4 +76,11 @@ body {
     color: black;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    border-radius: 10px;
 }
+
+.texto_principal button:hover {
+    transform: scale(1.1);
+    background-color: #62f576;
+}
+
