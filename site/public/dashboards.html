@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/dashboards.css">
@@ -42,17 +47,18 @@
     <!-- INICIO CABEÇALHO -->
 
     <div class="banner"> <!--flex direction column-->
+        <h1>Bem-vindo à nossa dashboard! Aqui, você pode monitorar a quantidade de usuários cadastrados de acordo com a plataforma. Fique à vontade para explorar e obter insights valiosos sobre nossa comunidade.</h1>
         <div class="dashboards"> <!--flex direction row-->
 
-            <div class="grafico_estado">
-                <canvas id="myChart"
-                    style="display: flex; position: relative; width: 60vh; height: 20vw; margin-left: 50px;"></canvas>
+            <div class="graficos">
+                <h2>Jogadores Cadastrados</h2> 
+                <canvas id="myChart"></canvas>
             </div>
 
 
-            <div class="grafico_plataforma">
-                <canvas id="myChart2"
-                    style="position: relative; width: 60vh; height: 26vw; margin-left: 250px;"></canvas>
+            <div class="graficos">
+                <h2>Equipes Cadastradas</h2>
+                <canvas id="myChart2"></canvas>
             </div>
         </div>
 
@@ -256,46 +262,36 @@
 
 
         setTimeout(() => {
-
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['PC', 'Playstation 4', 'Playstation 5', 'Xbox One', 'Xbox Series'],
-                    datasets: [{
-                        label: 'Plataforma PC',
-                        data: [Number(sessionStorage.getItem("PLATAFORMAPC")), Number(sessionStorage.getItem("PLATAFORMAPS4")), Number(sessionStorage.getItem("PLATAFORMAPS5")), Number(sessionStorage.getItem("PLATAFORMAXBOXONE")), Number(sessionStorage.getItem("PLATAFORMAXBOXSERIES"))],
-                        backgroundColor: [
-                            'rgba(255, 99, 132)',
-                            'rgba(54, 162, 235)',
-                            'rgba(255, 206, 86)',
-                            'rgba(75, 192, 192)',
-                            'rgba(153, 102, 255)',
-                            'rgba(255, 159, 64)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132)',
-                            'rgba(54, 162, 235)',
-                            'rgba(255, 206, 86)',
-                            'rgba(75, 192, 192)',
-                            'rgba(153, 102, 255)',
-                            'rgba(255, 159, 64)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    },
-                    maintainAspectRatio: false
-                }
-            });
-
-        }, 200);
-
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['PC', 'Playstation 4', 'Playstation 5', 'Xbox One', 'Xbox Series'],
+            datasets: [{
+                label: 'Plataformas',
+                data: [Number(sessionStorage.getItem("PLATAFORMAPC")), Number(sessionStorage.getItem("PLATAFORMAPS4")), Number(sessionStorage.getItem("PLATAFORMAPS5")), Number(sessionStorage.getItem("PLATAFORMAXBOXONE")), Number(sessionStorage.getItem("PLATAFORMAXBOXSERIES"))],
+                backgroundColor: [
+                    'rgba(255, 99, 132)',  // Rosa
+                    'rgba(54, 162, 235)',  // Azul
+                    'rgba(255, 205, 86)',  // Amarelo
+                    'rgba(75, 192, 192)',  // Turquesa
+                    'rgba(153, 102, 255)'   // Roxo
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132)',
+                    'rgba(54, 162, 235)',
+                    'rgba(255, 205, 86)',
+                    'rgba(75, 192, 192)',
+                    'rgba(153, 102, 255)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false
+        }
+    });
+}, 200);
 
         console.log("deus abençoe: ", sessionStorage);
     }
