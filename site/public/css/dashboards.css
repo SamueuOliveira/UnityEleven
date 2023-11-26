@@ -73,3 +73,19 @@ body {
 }
 
 
+.graficos button {
+    background-color: #4BC65B;
+    width: 45%;
+    color: #000; 
+    border: none; 
+    border-radius: 5px;
+    padding: 10px 20px; /* Preenchimento interno */
+    cursor: pointer; /* Mude o cursor para a mão quando passar o mouse */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.graficos button:hover {
+    transform: scale(1.1);
+    background-color: #62f576;
+}
