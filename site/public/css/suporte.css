@@ -3,10 +3,12 @@ body {
 
 }
 
-
+.banner {
+    margin-bottom: 50px;
+} 
 
 #links_header {
-    margin-right: 50px;
+    margin-right: 170px;
     width: 200px;
 }
 
@@ -16,69 +18,21 @@ body {
     width: 50px;
 }
 
-
-.banner {
-    display: flex;
-    justify-content: space-around;
+.banner h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    text-decoration: underline;
 }
 
-.banner img {
-    width: 40%;
-    height: 600px;
-    align-items: center;
-    
+
+.banner h2 {
+    padding-left: 60px;
+    width: 57%;
+    color:#23632c; 
 }
 
-.bannerSuporte {
-    color: white;
-    width: 30%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px 0 85px 70px;
-    padding: 25px;
-    background-color: #2c2b2b;
-    border-radius: 20px;
-}
-
-.bannerSuporte h1 {
-    font-family: 'Open Sans', sans-serif; 
+.banner p {
+    padding: 0 60px;
     font-size: 20px;
-    
+
 }
-
-.bannerSuporte textarea {
-    height: 200px;
-    width: 270px;
-    border-radius: 15px;
-    padding: 15px;
-    margin-top: 90px;
-    font-size: 20px;
-}
-
-.bannerSuporte .formularioSuporte {
-
-    width: 300px;
-    height: 35px;
-    border-radius: 5px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.bannerSuporte .formularioSuporte input, select {
-margin: 5px 0;
-border-radius: 10px;
-}
-
-.bannerSuporte input {
-    padding: 5px;
-    border-radius: 10px;
-}
-
-.bannerSuporte select {
-    padding: 5px;
-}
-
