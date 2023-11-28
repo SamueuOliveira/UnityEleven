@@ -33,5 +33,9 @@ router.get("/plataformaXBOXSERIESEQUIPE", function (req, res) {
     clubeController.plataformaXBOXSERIESEQUIPE(req, res);
 });
 
+router.get("/listaEquipe", function (req, res) {
+    clubeController.listaEquipe(req, res);
+});
+
 
 module.exports = router;

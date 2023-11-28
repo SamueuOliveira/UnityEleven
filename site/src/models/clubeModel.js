@@ -79,6 +79,16 @@ function plataformaXBOXSERIESEQUIPE() {
     return database.executar(instruncao);
 }
 
+function listaEquipe() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function street():");
+    var instruncao = `
+    SELECT nomeClube, plataforma, nomeProprietario, telefone FROM clube;
+     `;
+
+    console.log("Executando a instrução SQL: \n" + instruncao);
+    return database.executar(instruncao);
+}
+
 module.exports = {
     cadastrarEquipe,
     listar,
@@ -86,5 +96,6 @@ module.exports = {
     plataformaPS4EQUIPE,
     plataformaPS5EQUIPE,
     plataformaXBOXONEEQUIPE,
-    plataformaXBOXSERIESEQUIPE
+    plataformaXBOXSERIESEQUIPE,
+    listaEquipe
 };

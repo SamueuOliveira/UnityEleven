@@ -36,4 +36,6 @@ router.get("/listaJogador", function (req, res) {
 });
 
 
+
+
 module.exports = router;
