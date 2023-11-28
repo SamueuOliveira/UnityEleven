@@ -31,5 +31,9 @@ router.get("/plataformaXBOXSERIES", function (req, res) {
     usuarioController.plataformaXBOXSERIES(req, res);
 });
 
+router.get("/listaJogador", function (req, res) {
+    usuarioController.listaJogador(req, res);
+});
+
 
 module.exports = router;

@@ -46,7 +46,7 @@ body {
 
 .banner .boxes .boxbranco:hover {
     background: linear-gradient(to right, rgb(255, 255, 255), black);
-    padding: 0 10px;
+    transform: scale(1.05);
  }
 
 .banner .boxes .box {
@@ -58,7 +58,7 @@ body {
 
 .banner .boxes .box:hover {
     background:  linear-gradient(to right, blue, black );
-    padding: 0 10px;
+    transform: scale(1.05);
  }
 
 
@@ -74,6 +74,7 @@ body {
     margin-top: 10px;
     
 }
+
 
 #img_marcosleonardo {
     width: 70%;

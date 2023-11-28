@@ -27,15 +27,27 @@
             </div>
 
             <div id="foto_perfil">
-                <button class="botao_formatado"><a style="color: black;" class="link_formatado" href="index.html">Sair</a></button>
+                <button class="botao_formatado"><a style="color: black;" class="link_formatado"
+                        href="index.html">Sair</a></button>
             </div>
         </div>
 
     </div>
 
-   <!--INICIO BANNER-->
+    <!--INICIO BANNER-->
 
     <h1>Tabela dos Jogadores</h1>
+
+    <table id="tabela_jogador">
+        <tr>
+            <th>GamerTag</th>
+            <th>Plataforma</th>
+            <th>Posição</th>
+            <th>Overall</th>
+            <th>Link do Vídeo</th>
+            <th>Telefone</th>
+        </tr>
+    </table>
 
 
     <!--FOOTER-->
@@ -94,3 +106,46 @@
 </body>
 
 </html>
+
+<script>
+    var dadosJogador;
+    function exibirJogador() {
+        fetch("/usuarios/listaJogador").then(function (resposta) {
+            console.log("ESTOU NO THEN DO funcskatista()!")
+            if (resposta.ok) {
+                return (resposta.json())
+
+
+            } else {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+            }
+        })
+
+            .then(
+                (dados) => {
+
+                    for (var posicao = 0; posicao < dados.length; posicao++) {
+                        tabela_jogador.innerHTML +=
+                `<tr> 
+                <td>${dados[posicao].gamerTag}</td>
+                <td>${dados[posicao].plataforma}</td>
+                <td>${dados[posicao].posicao}</td>
+                <td>${dados[posicao].overall}</td>
+                <td>${dados[posicao].linkVideo}</td>
+                <td>${dados[posicao].telefone}</td>
+                </tr>`
+                    }
+
+                }
+            ).catch(function (erro) {
+                console.log(erro);
+            })
+        console.log(dadosJogador)
+
+
+    }
+
+    exibirJogador()
+
+
+</script>

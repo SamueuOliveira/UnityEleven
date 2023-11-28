@@ -19,7 +19,7 @@ function autenticar(req, res) {
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
                         res.json(resultadoAutenticar)
-                        
+
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -168,14 +168,34 @@ function plataformaXBOXSERIES(req, res) {
 };
 
 
+function listaJogador(req, res) {
+    usuarioModel.listaJogador()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        )
+};
+
+
+
 
 module.exports = {
     autenticar,
     cadastrar,
     plataformaPC,
- plataformaPS4,
- plataformaPS5,
- plataformaXBOXONE,
- plataformaXBOXSERIES
+    plataformaPS4,
+    plataformaPS5,
+    plataformaXBOXONE,
+    plataformaXBOXSERIES,
+    listaJogador
 
 }
