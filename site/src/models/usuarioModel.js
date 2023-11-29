@@ -86,6 +86,17 @@ function listaJogador() {
     return database.executar(instruncao);
 }
 
+
+function adicionarFK(idClube, idJogador) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function street():");
+    var instruncao = `
+    UPDATE jogador SET fkClube = ${idClube} WHERE idJogador = ${idJogador};
+     `;
+
+    console.log("Executando a instrução SQL: \n" + instruncao);
+    return database.executar(instruncao);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
@@ -94,5 +105,6 @@ module.exports = {
     plataformaPS5,
     plataformaXBOXONE,
     plataformaXBOXSERIES,
-    listaJogador
+    listaJogador,
+    adicionarFK
 };

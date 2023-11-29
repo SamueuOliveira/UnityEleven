@@ -35,6 +35,11 @@ router.get("/listaJogador", function (req, res) {
     usuarioController.listaJogador(req, res);
 });
 
+router.post("/adicionarFK", function (req, res) {
+    usuarioController.adicionarFK(req, res);
+});
+
+
 
 
 

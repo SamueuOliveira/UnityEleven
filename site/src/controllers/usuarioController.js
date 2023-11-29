@@ -186,6 +186,18 @@ function listaJogador(req, res) {
 };
 
 
+function adicionarFK(req, res) {
+    var idClube = req.body.idClube
+    var idJogador = req.body.idJogador
+    usuarioModel.adicionarFK(idClube, idJogador)
+        .then(function (resultado) {
+            res.json(resultado)
+        }
+        )
+};
+
+
+
 
 
 module.exports = {
@@ -196,6 +208,7 @@ module.exports = {
     plataformaPS5,
     plataformaXBOXONE,
     plataformaXBOXSERIES,
-    listaJogador
+    listaJogador,
+    adicionarFK
 
 }
