@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Lato&family=Open+Sans:ital,wght@0,500;1,800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/listaJogador.css">
+    <link rel="stylesheet" href="css/listaEquipe.css">
 </head>
 
 <body>
@@ -36,16 +41,18 @@
 
     <!--INICIO BANNER-->
 
-    <h1>Tabela das Equipes</h1>
+    <h1>Bem-vindo à lista de equipes do Modo Club do FIFA, onde você tem acesso exclusivo aos contatos dos representantes de times. Explore as opções disponíveis, entre em contato com os representantes e construa parcerias sólidas para levar o seu clube à glória nos campos virtuais. Estamos aqui para conectar você às melhores oportunidades no mundo do FIFA Clubs. Boa sorte na sua jornada!</h1>
 
-    <table id="tabela_equipe">
-        <tr>
-            <th>Clubes</th>
-            <th>Plataforma</th>
-            <th>Representante</th>
-            <th>Telefone</th>
-        </tr>
-    </table>
+    <div class="listaDasEquipes">
+        <table id="tabela_equipe">
+            <tr>
+                <th>Clubes</th>
+                <th>Plataforma</th>
+                <th>Representante</th>
+                <th>Telefone</th>
+            </tr>
+        </table>
+    </div>
 
 
     <!--FOOTER-->
@@ -125,10 +132,10 @@
                     for (var posicao = 0; posicao < dados.length; posicao++) {
                         tabela_equipe.innerHTML +=
                 `<tr> 
-                <td>${dados[posicao].nomeClube}</td>
-                <td>${dados[posicao].plataforma}</td>
-                <td>${dados[posicao].nomeProprietario}</td>
-                <td>${dados[posicao].telefone}</td>
+                <td style="color:#4BC65B;">${dados[posicao].nomeClube}</td> 
+                <td>${dados[posicao].plataforma}</td> 
+                <td style="color:#4BC65B;">${dados[posicao].nomeProprietario}</td> 
+                <td>${dados[posicao].telefone}</td> 
                 </tr>`
                     }
 

@@ -79,7 +79,7 @@ function plataformaXBOXSERIES() {
 function listaJogador() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function street():");
     var instruncao = `
-     SELECT gamerTag, plataforma, posicao, overall, linkVideo, telefone FROM jogador WHERE fkClube IS NULL;
+    SELECT gamerTag, plataforma, posicao, overall, linkVideo, telefone FROM jogador WHERE fkClube IS NULL ORDER BY gamerTag ;
      `;
 
     console.log("Executando a instrução SQL: \n" + instruncao);

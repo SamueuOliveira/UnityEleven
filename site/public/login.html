@@ -74,6 +74,7 @@
                         Entrar
                     <!-- </a> -->
                 </button>
+                <div id="exibir_erro"></div>
             </div>
         </div>
     </div>
@@ -172,7 +173,10 @@
            console.log("ESTOU NO THEN DO entrar()!")
 
            if (resposta.ok) {
-               console.log(resposta);
+            exibir_erro.innerHTML = `<img style="width: 30px;" src="assets/gif_carregamento.gif" alt="">`
+                    setTimeout(function () {
+                        window.location = "login.html";
+                    }, 3000);  // O valor 2000 representa um atraso de 2 segundos (em milissegundos)
 
                resposta.json().then(json => {
                    console.log(json);
@@ -189,7 +193,7 @@
 
            } else {
 
-               console.log("Houve um erro ao tentar realizar o login!");
+               exibir_erro.innerHTML = `<p style="color: red; font-weight: bold;">Usuário não encontrado!</p>`
 
                resposta.text().then(texto => {
                    console.error(texto);

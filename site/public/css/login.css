@@ -72,6 +72,7 @@ body {
     align-items: center;
     background-color: #4BC65B;
     font-weight: bold;
+    margin-bottom: 15px;
   }
 
   #botao_cadastro_login {

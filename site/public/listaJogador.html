@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Lato&family=Open+Sans:ital,wght@0,500;1,800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/listaJogador.css">
@@ -23,6 +28,8 @@
                     <li><a class="link_formatado" href="#rodape">Contato</a></li>
                     <li><a class="link_formatado" href="noticias.html">Noticias</a></li>
                     <li><a class="link_formatado" href="suporte.html">FAQ</a></li>
+
+                    <a href=""></a>
                 </ul>
             </div>
 
@@ -36,18 +43,20 @@
 
     <!--INICIO BANNER-->
 
-    <h1>Tabela dos Jogadores</h1>
+    <h1>Bem-vindo à lista de jogadores do Modo Club do FIFA, onde você encontra talentosos atletas sem clube em busca de uma equipe. Explore a variedade de jogadores disponíveis, assista aos vídeos que destacam suas habilidades no campo e entre em contato para fortalecer seu time. Descubra novos talentos e construa uma equipe vitoriosa com a nossa seleção de jogadores dedicados e prontos para entrar em campo!</h1>
 
-    <table id="tabela_jogador">
-        <tr>
-            <th>GamerTag</th>
-            <th>Plataforma</th>
-            <th>Posição</th>
-            <th>Overall</th>
-            <th>Link do Vídeo</th>
-            <th>Telefone</th>
-        </tr>
-    </table>
+    <div class="listaDosJogadores">
+        <table id="tabela_jogador">
+            <tr>
+                <th>GamerTag</th>
+                <th>Plataforma</th>
+                <th>Posição</th>
+                <th>Overall</th>
+                <th>Link do Vídeo</th>
+                <th>Telefone</th>
+            </tr>
+        </table>
+    </div>
 
 
     <!--FOOTER-->
@@ -127,11 +136,11 @@
                     for (var posicao = 0; posicao < dados.length; posicao++) {
                         tabela_jogador.innerHTML +=
                 `<tr> 
-                <td>${dados[posicao].gamerTag}</td>
+                <td style="color:#4BC65B;">${dados[posicao].gamerTag}</td>
                 <td>${dados[posicao].plataforma}</td>
-                <td>${dados[posicao].posicao}</td>
+                <td style="color:#4BC65B;">${dados[posicao].posicao}</td>
                 <td>${dados[posicao].overall}</td>
-                <td>${dados[posicao].linkVideo}</td>
+                <td><a style="text-decoration: none; color:#4BC65B;" href="${dados[posicao].linkVideo}" target="_blank">${dados[posicao].linkVideo}</a></td>
                 <td>${dados[posicao].telefone}</td>
                 </tr>`
                     }
