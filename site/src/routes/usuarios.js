@@ -11,6 +11,10 @@ router.post("/cadastrar", function (req, res) {
 router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
+router.post("/autenticarJogador", function (req, res) {
+    usuarioController.autenticarJogador(req, res);
+});
+
 router.get("/plataformaPC", function (req, res) {
     usuarioController.plataformaPC(req, res);
 })
