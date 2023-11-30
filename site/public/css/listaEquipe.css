@@ -23,6 +23,20 @@ td {
     padding: 11px 0;
 }
 
+table tr td button {
+    background-color: #4BC65B; 
+    color: #000; 
+    border: none; 
+    border-radius: 5px;
+    padding: 9px 14px; /* Preenchimento interno */
+    cursor: pointer; /* Mude o cursor para a mão quando passar o mouse */
+}
+
+table tr td button:hover {
+    transform: scale(1.2);  /* Efeito de aumentar botão*/
+    background-color: #62f576;
+}
+
 
 
 .listaDasEquipes {
