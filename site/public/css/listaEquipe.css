@@ -34,7 +34,7 @@ table tr td button {
 
 table tr td button:hover {
     transform: scale(1.2);  /* Efeito de aumentar botão*/
-    background-color: #62f576;
+    background-color: #f5f5f5;
 }
 
 
